@@ -1,0 +1,18 @@
+.popover-container{
+    position: relative;
+}
+
+.popover-input{
+    border:1px solid #444;
+}
+
+.popover-dropdown{
+    position: absolute;
+    top:40px;
+    max-width: 340px;
+    z-index: 100;
+}
+
+.durationAll {
+    display: none;
+}

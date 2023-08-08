@@ -1,0 +1,15 @@
+.autocomplete-container{
+    position: relative;
+}
+.autocomplete-input{
+    /* min-height: 40px; */
+    width: 140px;
+    max-width: 340px;
+    border:1px solid #444;
+}
+.autocomplete-dropdown{
+    position: absolute;
+    top:40px;
+    max-width: 340px;
+    z-index: 100;
+}

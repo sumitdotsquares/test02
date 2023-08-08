@@ -1,0 +1,306 @@
+.search-bar {
+  display: inline-flex;
+}
+
+.site-search {
+  .grid-x {
+    display: flex;
+    justify-content: space-around;
+    @media screen and (max-width: 991px) {
+      flex-flow: initial;
+      flex-wrap: wrap;
+      > div {
+        width: 50%;
+        -ms-flex: 1 1 50%;
+        flex: 1 1 50%;
+        margin-bottom: 10px;
+        padding: 0 0.2rem;
+        max-width: 50%;
+        &.medium-auto {
+          width: 50%;
+          -ms-flex: 1 1 50%;
+          flex: 1 1 50%;
+        }
+        &.medium-shrink {
+          width: auto;
+          -ms-flex: 1 1 0px;
+          flex: 1 1 0px;
+          max-width: 160px;
+        }
+      }
+    }
+    @media screen and (max-width: 639px) {
+      > div {
+        margin-bottom: 0;
+      }
+    }
+    @media screen and (max-width: 575px) {
+      > div {
+        width: 100%;
+        -ms-flex: 1 1 100%;
+        flex: 1 1 100%;
+        max-width: 100%;
+        &.medium-auto {
+          width: 100%;
+          -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+        }
+      }
+    }
+  }
+  .solmar-dropdown-container {
+    .datepicker-dropdown {
+      width: 360px;
+      @media screen and (min-width: 40em) and (max-width: 63.99875em) {
+        left: 0 !important;
+      }
+      @media screen and (max-width: 639px) {
+        position: absolute;
+        top: 100%;
+        margin: 10px 0 0;
+        width: 310px;
+        &:after,
+        &:before {
+          content: "";
+          display: block;
+        }
+      }
+      .datepicker-top {
+        background: none;
+        width: 100%;
+        padding: 0;
+        justify-content: flex-end;
+        @media screen and (min-width: 1024px) {
+          display: none;
+        }
+        .close-btn {
+          width: 28px;
+          height: 28px;
+          box-shadow: 1px 1.5px 1.5px rgba(0, 0, 0, 0.45);
+          padding: 0.5rem;
+        }
+      }
+      .day-picker {
+        .day-picker-wrapper {
+          .date-picker-title {
+            margin-right: 1.5rem;
+            text-align: center;
+          }
+          .day-picker-day {
+            height: 34px;
+            width: 100%;
+          }
+          > div {
+            &:first-child {
+              &::after {
+                content: none;
+              }
+            }
+          }
+        }
+      }
+      .month-picker {
+        .month-picker-months {
+          width: 292px;
+          .month-picker-month {
+            width: 86px;
+          }
+        }
+      }
+    }
+  }
+}
+.duration-dropdown{
+  .solmar-dropdown-container{
+      .duration-item-dropdown{
+          width: 100%;
+      }
+  }
+}
+.autocomplete-dropdown-new {
+  padding: 0.5rem 1rem;
+  // box-shadow: none !important;
+  border-radius: 0 !important;
+  h3 {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 15px;
+  }
+
+  .desti {
+    cursor: pointer;
+    box-shadow: 1px 1.5px 1.5px rgba(0, 0, 0, 0.45);
+    transition: all 0.25s ease-out;
+    width: 28px;
+    height: 28px;
+    background: #fff;
+    position: absolute;
+    right: 15px;
+    top: 5px;
+    img {
+      display: block;
+      width: 28px;
+      height: 28px;
+      padding: 0.5rem;
+    }
+  }
+  .duration-dropdown {
+    .solmar-dropdown-container {
+      .duration-item-dropdown {
+        width: 100%;
+      }
+    }
+  }
+  span.destinations-reset {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    color: #e43880;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  > ul {
+    &.hasParent {
+      @media screen and (max-width: 991px) {
+        max-height: 300px;
+        overflow-y: auto;
+      }
+      > li {
+        padding: 2px 10px;
+        &.dropDown {
+          display: flex;
+          padding: 2px 0;
+          flex-wrap: wrap;
+          > div {
+            display: flex;
+            align-items: center;
+            width: 100%;
+          }
+          input {
+            margin: 0 10px 0 0;
+          }
+          &:hover {
+            text-decoration: none !important;
+          }
+          label {
+            width: calc(100% - 18px);
+            &.region_group {
+              text-decoration: underline;
+              color: #e43880;
+            }
+          }
+          button {
+            background-image: url(/themes/custom/solm/images/solmar-sprites.svg);
+            background-size: 284px;
+            height: 1.4rem;
+            width: 1.2rem;
+            background-position: left -92px top -87px;
+            font-size: 0;
+            cursor: pointer;
+            @media screen and (max-width: 991px) {
+              background-position: left -63px top -87px;
+            }
+            &.active {
+              // background-position: left -34px top -87px;
+              @media screen and (max-width: 991px) {
+                background-position: left -6px top -87px;
+              }
+            }
+          }
+        }
+        > .hasChild {
+          position: absolute;
+          top: 0;
+          left: 100%;
+          background-color: #fff;
+          z-index: 9;
+          flex-direction: row;
+          min-height: 100%;
+          align-items: stretch;
+          box-shadow: 1px 1px 5px rgba(0,0,0,.75);
+          @media screen and (max-width: 991px) {
+            position: static;
+            width: 100%;
+            min-width: 0;
+            border-left: none;
+            padding-top: 0;
+            flex-direction: column;
+          }
+          > li {
+            padding-top: 65px !important;
+            border-left: 1px solid #ddd;
+            margin-bottom: 0;
+            @media screen and (max-width: 991px) {
+              padding-top: 0 !important;
+              border-left: none;
+            }
+          }
+          li {
+            padding: 2px 10px;
+            min-width: 230px;
+            @media screen and (max-width: 1199px) {
+              min-width: 200px;
+            }
+            > div {
+              display: flex;
+              align-items: center;
+              width: 100%;
+            }
+            &.dropDown {
+              button {
+                display: none;
+              }
+              li {
+                padding-left: 0;
+                padding-right: 0;
+              }
+            }
+            &:hover {
+              text-decoration: none !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+ul.hasParent {
+  > .dropDown.open {
+    > .hasChild {
+      // display: block;
+      display: flex;
+    }
+  }
+  > .dropDown {
+    > .hasChild {
+      display: none;
+    }
+  }
+}
+
+.duration-item-dropdown {
+  ul.solmar-dropdown-inner {
+    > li {
+      padding: 2px 0;
+      &:hover {
+        text-decoration: none !important;
+      }
+      input {
+        margin: 0 10px 0 0;
+      }
+      a {
+        text-decoration: underline;
+      }
+      span.durations-reset {
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+        color: #e43880;
+        text-decoration: underline;
+      }
+    }
+  }
+}

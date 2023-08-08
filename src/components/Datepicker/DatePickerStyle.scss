@@ -1,0 +1,15 @@
+.datepicker-container {
+  position: relative;
+}
+
+.datepicker-input {
+  display: flex;
+  // border: 1px solid #444;
+}
+
+.datepicker-dropdown {
+  position: absolute;
+  // top: 40px;
+  // max-width: 340px;
+  z-index: 100;
+}
